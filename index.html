@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SITE TITLE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/jquery/jquery-2.2.4.min.js"></script>
+        <link type="text/css" href="css/styles.css" rel="stylesheet">
+		<script type="text/javascript" src="./js/backfix.min.js"></script>
+		<script type="text/javascript">
+			var backbutton="http://msn.com";
+			bajb_backdetect.OnBack = function(){window.history.back=function(){
+				window.onbeforeunload=function(){};
+				document.location=backbutton;
+				};
+			};
+		</script>
+    </head>
+    <body>
+<audio id="audio" autoplay>
+	<source src="./audio/alert.ogg" type="audio/ogg">
+	<source src="./audio/alert.mp3" type="audio/mpeg">
+	<source src="./audio/alert.wav" type="audio/vnd.wave">
+</audio>
+
+<script type="text/javascript">
+	$(function(){
+		$(".intro-button").click(function(){
+			$(".alert-out").hide();
+			document.getElementById("audio").play();
+		});
+	});
+</script>
+
+		<!-- ************* ENTRY ALERT *************** -->
+        <div class="alert-out">
+            <div class="alert-middle">
+                <div class="alert-inner">
+                    
+					<p>SOME TEXT</p>
+					
+					<div class="intro-button">
+						<p>OK!!!</p>
+					</div>
+					
+                </div> <!-- alert - inner -->
+            </div>
+        </div> <!-- alert - end -->
+	
+	<!-- ************* HTML CODE *************** -->
+        <div class="header">
+            
+        </div>
+        <div class="middle">
+            <a class="punder" href="http://facebook.com" target="_blank">POP UNDER</a>
+        </div>
+        <div class="footer">
+            
+        </div>
+		
+<script type="text/javascript">
+var popunder = "http://google.com";
+	$(function(){
+		$("a.punder").click(function(){
+			setTimeout(function(){
+				window.location = popunder;
+			},10);
+		});
+	});
+</script>
+		
+	<!-- ************* END OF HTML CODE *************** -->
+		
+<script type="text/javascript">
+	navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+	window.onload = function(){navigator.vibrate([500, 1000, 500]);};
+</script>
+		
+    </body>
+</html>
